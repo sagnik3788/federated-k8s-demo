@@ -1,0 +1,9 @@
+# Ignore the dataset directory
+dataset/
+
+# Ignore specific model files in the server directory
+client/full_dataset_vectors.h5
+server/final_model.h5
+
+# Ignore the virtual environment directory
+federated-env/

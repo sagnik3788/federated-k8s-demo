@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fl-client
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: fl-client
+  template:
+    metadata:
+      labels:
+        app: fl-client
+    spec:
+      containers:
+      - name: client
+        image: fl-client:latest
+        env:
+          - name: SERVER_ADDRESS
+            value: "fl-server-service:8080"
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - node1  
+                - node2
+                - node3
+                - node4
+                - node5
