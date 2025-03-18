@@ -1,1 +1,0 @@
-# federated-k8s-demo
