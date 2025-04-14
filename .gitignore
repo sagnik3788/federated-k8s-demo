@@ -1,0 +1,15 @@
+# Ignore the dataset directory
+dataset/
+client1/dataset/
+client2/dataset/
+client3/dataset/
+vanila-dl/dataset/
+server/final_inception_model.keras
+vanila-dl/final_inception_model.keras
+
+# Ignore specific model files in the server directory
+server/full_dataset_vectors.h5
+server/final_model.h5
+
+# Ignore the virtual environment directory
+federated-env/
